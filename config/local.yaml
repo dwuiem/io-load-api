@@ -1,0 +1,14 @@
+prometheus_port: "2112"
+http_server:
+  address: "0.0.0.0:8080"
+  timeout: 4s
+  idle_timeout: 60s
+postgres_db:
+  host: "db"
+  port: "5432"
+  db_name: "app"
+  username: "user"
+  password: "password"
+  max_conns: 10
+  max_conn_idle_time: 5m
+  health_check_period: 10s

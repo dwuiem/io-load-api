@@ -1,0 +1,40 @@
+services:
+  app:
+    build: .
+    ports:
+      - "8080:8080"
+      - "2112:2112"
+    networks:
+      - app_network
+    depends_on:
+      - db
+  prometheus:
+    image: prom/prometheus
+    volumes:
+      - ./config/metrics/prometheus.yaml:/etc/prometheus/prometheus.yml
+    ports:
+      - "9090:9090"
+    networks:
+      - app_network
+    depends_on:
+      - app
+  db:
+    image: postgres:latest
+    container_name: test-db
+    restart: no
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: app
+    ports:
+      - "5432:5432"
+    volumes:
+      - app_pg_data:/var/lib/postgresql/data
+    networks:
+      - app_network
+
+volumes:
+  app_pg_data:
+networks:
+  app_network:
+    driver: bridge
