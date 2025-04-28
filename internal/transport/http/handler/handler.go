@@ -3,11 +3,11 @@ package handler
 import (
 	"context"
 	"github.com/gin-gonic/gin"
+	"io-load-api/internal/model"
+	"io-load-api/internal/transport/http/middleware"
 	"log/slog"
 	"net/http"
 	"strconv"
-	"test-workmate/internal/model"
-	"test-workmate/internal/transport/http/middleware"
 	"time"
 )
 

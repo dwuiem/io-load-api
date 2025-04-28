@@ -5,9 +5,9 @@ import (
 	"errors"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
+	"io-load-api/internal/model"
+	"io-load-api/internal/service"
 	"log/slog"
-	"test-workmate/internal/model"
-	"test-workmate/internal/service"
 	"testing"
 )
 

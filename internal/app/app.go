@@ -2,12 +2,12 @@ package app
 
 import (
 	"context"
+	"io-load-api/internal/config"
+	"io-load-api/internal/service"
+	"io-load-api/internal/store/postgres"
+	"io-load-api/internal/transport/http/handler"
 	"log/slog"
 	"net/http"
-	"test-workmate/internal/config"
-	"test-workmate/internal/service"
-	"test-workmate/internal/store/postgres"
-	"test-workmate/internal/transport/http/handler"
 )
 
 // App contains HTTP Server, initializes store, handler and services and runs server

@@ -4,10 +4,10 @@ import (
 	"fmt"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
+	"io-load-api/internal/config"
 	"log"
 	"log/slog"
 	"net/http"
-	"test-workmate/internal/config"
 )
 
 var (

@@ -4,10 +4,10 @@ import (
 	"context"
 	"errors"
 	"fmt"
+	"io-load-api/internal/metrics"
+	"io-load-api/internal/model"
+	"io-load-api/internal/utils/io"
 	"log/slog"
-	"test-workmate/internal/metrics"
-	"test-workmate/internal/model"
-	"test-workmate/internal/utils/io"
 	"time"
 )
 

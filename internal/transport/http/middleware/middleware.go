@@ -2,8 +2,8 @@ package middleware
 
 import (
 	"github.com/gin-gonic/gin"
+	"io-load-api/internal/metrics"
 	"strconv"
-	"test-workmate/internal/metrics"
 	"time"
 )
 

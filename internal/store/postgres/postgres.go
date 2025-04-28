@@ -5,8 +5,8 @@ import (
 	"errors"
 	"fmt"
 	"github.com/jackc/pgx/v5/pgxpool"
+	"io-load-api/internal/config"
 	"log/slog"
-	"test-workmate/internal/config"
 	"time"
 )
 

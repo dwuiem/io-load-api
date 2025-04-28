@@ -4,7 +4,7 @@ import (
 	"context"
 	"database/sql"
 	"fmt"
-	"test-workmate/internal/model"
+	"io-load-api/internal/model"
 	"time"
 )
 

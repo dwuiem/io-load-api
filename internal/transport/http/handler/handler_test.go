@@ -6,11 +6,11 @@ import (
 	"errors"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
+	"io-load-api/internal/model"
+	"io-load-api/internal/transport/http/handler"
 	"log/slog"
 	"net/http"
 	"net/http/httptest"
-	"test-workmate/internal/model"
-	"test-workmate/internal/transport/http/handler"
 	"testing"
 	"time"
 )

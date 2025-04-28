@@ -1,4 +1,4 @@
-module test-workmate
+module io-load-api
 
 go 1.23.8
 

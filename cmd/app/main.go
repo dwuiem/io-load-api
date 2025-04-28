@@ -2,13 +2,13 @@ package main
 
 import (
 	"context"
+	"io-load-api/internal/app"
+	"io-load-api/internal/config"
+	"io-load-api/internal/metrics"
 	"log"
 	"log/slog"
 	"os"
 	"os/signal"
-	"test-workmate/internal/app"
-	"test-workmate/internal/config"
-	"test-workmate/internal/metrics"
 	"time"
 )
 

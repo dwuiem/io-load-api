@@ -2,9 +2,9 @@ package store
 
 import (
 	"context"
+	"io-load-api/internal/model"
 	"log/slog"
 	"sync"
-	"test-workmate/internal/model"
 	"time"
 )
 
