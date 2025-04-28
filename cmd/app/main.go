@@ -17,14 +17,18 @@ func main() {
 	logger := slog.New(
 		slog.NewTextHandler(os.Stdout, &slog.HandlerOptions{Level: slog.LevelInfo}),
 	)
+	logger.Info("Starting app...")
+	logger.Info("Start metrics")
 	metrics.RegisterMetrics()
 	metrics.StartMetricsServer(cfg)
+	logger.Info("Initializing app...")
 	application, err := app.New(logger, cfg)
 	if err != nil {
-		log.Fatal("error initializing application", err)
+		log.Fatalf("error initializing application %s", err)
 	}
 
 	// Running application
+	logger.Info("Running app...")
 	serverErrors := make(chan error, 1)
 	go func() {
 		serverErrors <- application.MustRun()
@@ -32,6 +36,8 @@ func main() {
 
 	stopSignal := make(chan os.Signal, 1)
 	signal.Notify(stopSignal, os.Interrupt)
+
+	logger.Info("Application started")
 
 	// Graceful shutdown
 	select {

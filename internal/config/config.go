@@ -36,7 +36,8 @@ type PostgresDB struct {
 func MustLoad() *Config {
 	configPath, exists := os.LookupEnv("CONFIG_PATH")
 	if !exists {
-		log.Fatal("CONFIG_PATH environment variable not set")
+		log.Println("CONFIG_PATH environment variable not set")
+		configPath = "config/local.yaml"
 	}
 	if _, err := os.Stat(configPath); os.IsNotExist(err) {
 		log.Fatal("CONFIG_PATH does not exist")

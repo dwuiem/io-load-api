@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
+	"log"
+	"log/slog"
 	"net/http"
 	"test-workmate/internal/config"
 )
@@ -45,7 +47,7 @@ func StartMetricsServer(cfg *config.Config) {
 	go func() {
 		err := http.ListenAndServe(fmt.Sprintf(":%s", cfg.PrometheusPort), nil)
 		if err != nil {
-			panic(err)
+			log.Fatal("Metrics server failed", slog.String("error", err.Error()))
 		}
 	}()
 }

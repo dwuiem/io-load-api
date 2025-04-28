@@ -17,7 +17,7 @@ type App struct {
 }
 
 func New(log *slog.Logger, cfg *config.Config) (*App, error) {
-	store, err := postgres.New(cfg)
+	store, err := postgres.New(log, cfg)
 	if err != nil {
 		return nil, err
 	}
